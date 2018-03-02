@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>Register</h2>
+<form method="post">
+        <div>
+            <label for="username">Name: </label>
+            <input name="username" type="text" />
+        </div>
+        <div>
+            <label for="email">Email: </label>
+            <input name="email" type="email" />
+        </div>
+        <div>
+            <label for="emailconfirm">Confirm Email: </label>
+            <input name="emailconfirm" type="email" />
+        </div>
+        <div>
+            <label for="password">Password: </label>
+            <input name="password" type="password" />
+        </div>
+    <div>
+            <label for="passwordconfirm">confirm Password: </label>
+            <input name="passwordconfirm" type="password" />
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+{% endblock %}
