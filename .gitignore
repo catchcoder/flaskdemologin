@@ -5,7 +5,7 @@ config.yml
 .idea/
 
 #Database for users
-flaskflasklogin.sqlite3
+flasklogin.sqlite3
 
 ToDo
 
