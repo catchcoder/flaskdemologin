@@ -8,9 +8,14 @@
         <div class="alert alert-warning" role="alert">Login failed</div>
     {% endif %}
     {% if id == 'emailsent' %}
-        <div class="alert alert-warning" role="alert">Email sent, please confirm email address</div>
+        <div class="alert alert-warning" role="alert">Email sent, please confirm address</div>
     {% endif %}
-     <h2 class="form-signin-heading">Please sign in</h2>
+
+    {% if id == 'emailchecked' %}
+        <div class="alert alert-success" role="alert">Valid email address</div>
+    {% endif %}
+
+     <h2 class="form-signin-heading">Sign in</h2>
         <div>
             <label for="email" class="sr-only" >Email address</label>
             <input name="email" type="text" class="form-control" placeholder="Email address" required autofocus />

@@ -76,7 +76,7 @@ def index():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'GET':
-        id = request.args.get('login')
+        id = request.args.get('id')
 
         return render_template('login.html', id=id)
     elif request.method == 'POST':
@@ -157,7 +157,7 @@ def authcheck(email, authcheck):
     if user.emailcheckcode == authcheck:
         user.accountlive = True
         db.session.commit()
-        return ('yes it checked out')
+        return render_template('login.html', id='emailchecked')
 
     else:
         return ('sadly it doesn\'t match')
@@ -187,6 +187,7 @@ def resetpasswordrequest():
         emailuser(email, confirmurl)
         return redirect(url_for('resetpasswordrequest', id='emailsent'))
     return redirect(url_for('resetpasswordrequest', id='failed'))
+
 if __name__ == '__main__':
     db.create_all()
     app.run(host='0.0.0.0', debug=True)
