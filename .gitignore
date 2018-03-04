@@ -1,4 +1,13 @@
+# config with password in
 config.yml
+
+#pycharm info
+.idea/
+
+#Database for users
+flaskflasklogin.sqlite3
+
+ToDo
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
