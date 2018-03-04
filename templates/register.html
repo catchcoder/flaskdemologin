@@ -1,7 +1,10 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<form class="form-signin" method="post">
+<form class="form-signin" method="post" onsubmit="return checkEmail(this);">
+{% if id == 'emailexist' %}
+        <div class="alert alert-warning" role="alert">Email address already used - Reset account --ToDO Link here--</div>
+    {% endif %}
  <h2 class="form-signin-heading">Register</h2>
         <div>
             <label for="username" class="sr-only">Name: </label>
