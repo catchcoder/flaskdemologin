@@ -1,4 +1,4 @@
-**Raspberry Pi - Home Controller** 
+**Python Flask Login Demo** 
 
 How to setup
 * pip install requirements.txt
