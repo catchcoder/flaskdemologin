@@ -1,19 +1,17 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="refresh" content="30">
-    <title>RaspPi</title>
+    <title>Python Flask Login Demo</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css' )}}" >
     <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css' ) }}" >
-<script type="text/javascript" language="JavaScript">
+<script>
 <!--
 //--------------------------------
-// This code compares two fields in a form and submit it
-// if they're the same, or not if they're different.
-//--------------------------------
+// Compare both email and both passwords fields in a form and submit it
+//-------------------------------
 function checkEmail(theForm) {
     if (theForm.email.value != theForm.emailconfirm.value)
     {
@@ -31,36 +29,30 @@ function checkEmail(theForm) {
 }
 //-->
 </script>
-
 </head>
 <body>
 <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-    <nav class="navbar navbar-light bg-faded">
   <a class="navbar-brand" href="/">
     <img src="{{  url_for('static', filename='images/favicon.png') }}" width="30" height="30" class="d-inline-block align-top" alt="">Home control
   </a>
-</nav>
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+ <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="navbar" id="navbarNavAltMarkup">
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
       <a class="nav-item nav-link" href="{{ url_for('register') }}">Register</a>
-
-      <a class="nav-item nav-link" href="{{ url_for('logoff') }}">Logoff</a></a>
-
+      <a class="nav-item nav-link" href="{{ url_for('logoff') }}">Logoff</a>
     </div>
   </div>
 </nav>
 <div class="container">
 {% block content %}
     {% endblock %}
-
     <div class="footer"><p class="text-center">&copy; Chris Hawkins 2018</p></div>
+    <div class="footer"><p class="text-center"><img src="https://img.shields.io/badge/Powered%20by-Python%20%7C%20Flask-blue.svg"></p></div>
 </div>
 <script src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
 <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-
 </body>
 </html>
