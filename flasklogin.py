@@ -86,17 +86,17 @@ def login():
         # user = Username.query.filter_by(username=usernametocheck).first()
         user = Username.query.filter_by(email=emailtocheck).first()
         if user is None:
-            return redirect(url_for('login', login='failed'))
+            return redirect(url_for('login', id='failed'))
         if not user.accountlive:
-            return redirect(url_for('login', login='emailnotverified'))
+            return redirect(url_for('login', id='emailnotverified'))
         if passwordtocheck == user.password:
             session['email'] = emailtocheck
             return redirect(url_for('index'))
         else:
-            return redirect(url_for('login', login='failed'))
+            return redirect(url_for('login', id='failed'))
         # session['username'] = usernametocheck
 
-        return redirect(url_for('login', login='failed'))
+        return redirect(url_for('login', id='failed'))
 
 
 @app.route('/register', methods=['GET', 'POST'])
