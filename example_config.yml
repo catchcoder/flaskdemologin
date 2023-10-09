@@ -1,0 +1,7 @@
+mail:
+    MAIL_USERNAME: catchcoder@gmail.comm
+    MAIL_PASSWORD: P4$$w0rd123b
+    MAIL_SERVER: smtp.gmail.com
+    MAIL_PORT: 465
+database:
+    SQLALCHEMY_DATABASE_URI: 'sqlite:///flasklogin.sqlite3'

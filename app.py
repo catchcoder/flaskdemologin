@@ -14,12 +14,13 @@ from flask_mail import Mail, Message
 from urllib import parse
 
 # Load yaml file with config setting
-basedir = os.getcwd()
+#basedir = os.getcwd()
+basedir = os.path.abspath(os.path.dirname(__file__))
 with open(os.path.join(basedir, 'config.yml'), 'r') as ymlfile:
 #with open('config.yml', 'r') as ymlfile:
     cfg = yaml.load(ymlfile, Loader=Loader )
 
-SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.sqlite')
+#SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.sqlite')
 
 # Flask app and secret
 app = Flask(__name__)
