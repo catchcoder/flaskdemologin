@@ -1,6 +1,11 @@
-# import os
+import os
 import uuid
 import yaml
+try:
+    from yaml import CLoader as Loader, CDumper as Dumper
+except ImportError:
+    from yaml import Loader, Dumper
+
 
 from flask import Flask, render_template, request, url_for, redirect, session
 from flask_sqlalchemy import SQLAlchemy
@@ -9,12 +14,12 @@ from flask_mail import Mail, Message
 from urllib import parse
 
 # Load yaml file with config setting
-# basedir = os.getcwd()
-# with open(os.path.join(basedir, 'config.yml'), 'r') as ymlfile:'
-with open('config.yml', 'r') as ymlfile:
-    cfg = yaml.load(ymlfile)
+basedir = os.getcwd()
+with open(os.path.join(basedir, 'config.yml'), 'r') as ymlfile:
+#with open('config.yml', 'r') as ymlfile:
+    cfg = yaml.load(ymlfile, Loader=Loader )
 
-# SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.sqlite')
+SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.sqlite')
 
 # Flask app and secret
 app = Flask(__name__)
@@ -41,7 +46,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = cfg[
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
-db.init_app(app)
+#db.init_app(app)
 
 
 class Username(db.Model):

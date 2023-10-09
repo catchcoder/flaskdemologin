@@ -1,7 +1,0 @@
-mail:
-    MAIL_USERNAME: youremailaddress@gmail.com
-    MAIL_PASSWORD: password, recommeded to use app password
-    MAIL_SERVER: smtp.gmail.com
-    MAIL_PORT: 465
-database:
-    SQLALCHEMY_DATABASE_URI: 'sqlite:///flasklogin.sqlite3'
